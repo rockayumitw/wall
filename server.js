@@ -46,6 +46,22 @@ const requestListener = async (req, res) => {
         handleError(res, err);
       }
     })
+  } else if (req.url === '/posts' && req.method === 'DELETE') {
+    await Posts.deleteMany({});
+    const allPosts = await Posts.find();
+    handleSuccess(res, allPosts);
+  } else if (req.url.startsWith('/posts/') && req.method === 'DELETE') {
+    const id = req.url.split('/').pop();
+    const posts = await Posts.findByIdAndDelete(id);
+    const allPosts = await Posts.find();
+    posts ? handleSuccess(res, allPosts) : handleError(res);
+  }  else if (req.url.startsWith('/posts/') && req.method === 'PATCH') {
+    req.on('end', async () => {
+        const id = req.url.split('/').pop();
+        const data = JSON.parse(body);
+        const posts = await Posts.findByIdAndUpdate(id, data, { new: true});
+        handleSuccess(res, posts)
+    })
   } else if (req.method === 'OPTIONS') {
     res.writeHead(200, headers);
     res.end();
@@ -61,3 +77,5 @@ const requestListener = async (req, res) => {
 
 const server = http.createServer(requestListener);
 server.listen(process.env.PORT || 3005);
+
+// https://vast-tor-96963.herokuapp.com/posts

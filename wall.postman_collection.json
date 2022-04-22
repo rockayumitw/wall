@@ -1,0 +1,138 @@
+{
+	"info": {
+		"_postman_id": "2d7f7dff-9f86-4c38-a801-25ec65a452ba",
+		"name": "wall",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "刪除單筆資料",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"哈囉\",\r\n    \"tags\": \"tag1\",\r\n    \"type\": \"person\",\r\n    \"content\": \"哈囉 你好2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://vast-tor-96963.herokuapp.com/posts/6262cd93bbaf4c0fefcbc18e",
+					"protocol": "https",
+					"host": [
+						"vast-tor-96963",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts",
+						"6262cd93bbaf4c0fefcbc18e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "取得所有列表",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://vast-tor-96963.herokuapp.com/posts",
+					"protocol": "https",
+					"host": [
+						"vast-tor-96963",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "新增單筆資料",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"哈囉\",\r\n    \"tags\": \"tag1\",\r\n    \"type\": \"person\",\r\n    \"content\": \"哈囉 你好3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://vast-tor-96963.herokuapp.com/posts",
+					"protocol": "https",
+					"host": [
+						"vast-tor-96963",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "刪除所有資料",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://vast-tor-96963.herokuapp.com/posts",
+					"protocol": "https",
+					"host": [
+						"vast-tor-96963",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "編輯單筆資料",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"哈囉\",\r\n    \"tags\": \"tag1\",\r\n    \"type\": \"person\",\r\n    \"content\": \"哈囉 你好5\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://vast-tor-96963.herokuapp.com/posts/6262cf3550fa0a5fbf416ef4",
+					"protocol": "https",
+					"host": [
+						"vast-tor-96963",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts",
+						"6262cf3550fa0a5fbf416ef4"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
